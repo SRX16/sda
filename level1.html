@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntax Saga - Java Debugging Game: Level 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkAnswer() {
+            const correctAnswer = `public class Level1 {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Code Quest!");
+    }
+}`;
+            const userAnswer = document.getElementById('userCode').value.trim();
+
+            if (userAnswer === correctAnswer) {
+                // Display congratulations message
+                document.getElementById('congratulations').style.display = 'block';
+                // Proceed to next level after a delay (optional)
+                setTimeout(function() {
+                    window.location.href = 'level2.html'; // You can replace this with the next level link
+                }, 2000); // Adjust the time before redirect (in milliseconds)
+            } else {
+                alert('Incorrect code! Try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>🛡️ Syntax Saga: Java Debugging Challenge - Level 1</h1>
+
+    <div class="level">
+        <h2>⚔️ Level 1: The Missing Semicolon</h2>
+        <p><strong>Challenge:</strong> The following Java code is missing a semicolon (<code>;</code>). Fix the syntax error.</p>
+        <div class="code-box">
+            <pre>
+public class Level1 {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Code Quest!")
+    }
+}
+            </pre>
+        </div>
+
+        <!-- Congratulations Message -->
+        <div id="congratulations" class="congratulations" style="display:none;">
+            <h3>🎉 Congratulations, you solved the challenge!</h3>
+            <p>Well done! You can now proceed to the next level.</p>
+        </div>
+
+        <textarea id="userCode" placeholder="Type your fixed Java code here..."></textarea>
+        <button onclick="checkAnswer()" class="play-button">Check Answer</button>
+    </div>
+</body>
+</html>
