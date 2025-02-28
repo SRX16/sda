@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntax Saga - Java Debugging Game: Level 3</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkAnswer() {
+            const correctAnswer = `public class Level3 {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 5) {
+            System.out.println("You are stuck in the Loop of Doom!");
+            i++;
+        }
+        System.out.println("You escaped!");
+    }
+}`;
+            const userAnswer = document.getElementById('userCode').value.trim();
+
+            if (userAnswer === correctAnswer) {
+                // Display congratulations message
+                document.getElementById('congratulations').style.display = 'block';
+                // Proceed to next level after a delay (optional)
+                setTimeout(function() {
+                    window.location.href = 'congratulations.html'; // Redirect to final page (e.g. congratulations)
+                }, 2000); // Adjust the time before redirect (in milliseconds)
+            } else {
+                alert('Incorrect code! Try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>🛡️ Syntax Saga: Java Debugging Challenge - Level 3</h1>
+
+    <div class="level">
+        <h2>⚔️ Level 3: The Loop of Doom</h2>
+        <p><strong>Challenge:</strong> The while-loop below is an infinite loop. Modify it to prevent an endless loop.</p>
+        <div class="code-box">
+            <pre>
+public class Level3 {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 5) {
+            System.out.println("You are stuck in the Loop of Doom!");
+        }
+        System.out.println("You escaped!");
+    }
+}
+            </pre>
+        </div>
+
+        <!-- Congratulations Message -->
+        <div id="congratulations" class="congratulations" style="display:none;">
+            <h3>🎉 Congratulations, you solved the challenge!</h3>
+            <p>Well done! You've completed the Code Quest!</p>
+        </div>
+
+        <textarea id="userCode" placeholder="Type your fixed Java code here..."></textarea>
+        <button onclick="checkAnswer()" class="play-button">Check Answer</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e); /* Dark gradient for modern look */
+    padding: 20px;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Headings */
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: #f39c12;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #f1c40f;
+}
+
+/* Glassmorphism Box */
+.glass-box {
+    background: rgba(255, 255, 255, 0.08); /* Transparent frosted glass */
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    margin: 15px auto;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    word-wrap: break-word;
+}
+
+/* Level Section */
+.level {
+    background: rgba(255, 255, 255, 0.1); /* Transparent with blur */
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 700px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    word-wrap: break-word;
+}
+
+/* Code Box */
+.code-box {
+    background: rgba(0, 0, 0, 0.5); /* Dark background for code */
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    font-family: 'Fira Code', monospace;
+    white-space: pre-wrap; /* Ensure long code lines wrap */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 96%;
+    margin: 15px auto;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0px 0px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Textarea for User Input */
+textarea {
+    width: 90%;
+    height: 160px;
+    margin-top: 12px;
+    font-family: 'Fira Code', monospace;
+    display: block;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    transition: border 0.3s ease-in-out;
+    font-size: 1rem;
+    color: #e0e0e0;
+    word-wrap: break-word;
+}
+
+textarea:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+/* Play Button Styles */
+.play-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Hover effect */
+.play-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+/* Active effect */
+.play-button:active {
+    transform: scale(1);
+}
+
+/* Alert Styles for Incorrect Answer */
+.alert {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.15);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    display: none;
+}
+
+/* Note Styling */
+.note {
+    background: rgba(41, 128, 185, 0.2);
+    color: #aed6f1;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-top: 25px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Congratulations Message Styling */
+.congratulations {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-top: 25px;
+    font-weight: 500;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.congratulations h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .glass-box, .level, .code-box {
+        width: 100%; /* Full width for mobile */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    textarea {
+        width: 100%; /* Full width on mobile */
+        height: 140px;
+    }
+
+    .play-button {
+        padding: 10px 15px;
+        font-size: 1rem; /* Smaller button on mobile */
+    }
+
+    .note, .congratulations {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
